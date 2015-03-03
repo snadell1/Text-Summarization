@@ -1,0 +1,13 @@
+In this paper, the authors essentially aim to use training data from one domain and unlabeled samples in the target domain to classify the sentiment in the target domain. It appears to be a novel and interesting idea. 
+
+The methodology is divided into two parts: sample selection and sample classification. 
+
+Sample selection is the process by which useful samples are selected using a modified version of Query-by-Committee. Here, the samples with opposite classifications from testing with classifiers trained using source domain data (classifier 1) and target domain data (classifier 2) are ordered according to decreasing order of uncertainty based on classifications from classifier 1 and the top-N samples are selected to be annotated by humans. These samples are then added to the training data for classifier 2.
+
+In sample classification, more training data is obtained by using a label propagation algorithm where the transition probabilities between two reviews appear to be essentially a sort of distance between a modified version of their respective TF-IDF values. The obtained labelled data is then used to train multiple classifiers (domain adaptation classifier and semi-supervised target-domain classifier) whose classifications over the testing data are combined the Bayes rule.
+
+While the problem is quite novel, the perceived improvements of proposed solution aren't much. Comparing the performance of the domain adaption classifier with baselines, the classification is better in only 7 out of 12 instances of domain adaptation. Again, comparing the performance of the semi-supervised classifier with baselines, the classification is better in only 2 out of 4 instances. Furthermore, this comparison is done with a fixed number of samples (200 samples) as training data. A better comparison would one using a varying number of training samples. The overall framework is evaluated using varying number of samples and appears to produce a very marginal increase in performance in most cases. 
+
+While there is nothing that is grossly wrong about the proposed methodology, the paper is marginal at best and does not, in my opinion, make enough contributions to be accepted.  
+
+Also, the paper could use some more copy-editing as some sentences appear to be quite incoherent.

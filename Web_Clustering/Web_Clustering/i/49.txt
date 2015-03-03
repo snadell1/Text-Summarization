@@ -1,0 +1,14 @@
+The paper is well organized and technically correct in terms of notations, theory, and math to the best of my knowledge. However, the authors choose to use a different algorithm for publishing the results. This new algorithm does deviate from the first in a manner that is not legal given their previous assumptions but still does not affect the outcome on majority of the published results (discussed again in results sub-section).
+
+The authors drawing inspiration from life's lesson-a draconian punishment is often unnecessary, all  that is needed is a punishment sufficient enough to deter a repetition of the same mistake-state that to compute the equlibrium of a game, it is not necessary to perform an exhaustive search of all outcomes to determine the best punishment value.
+
+They focus on the folk theorem and state that if we find punishment values that are deterrent enough and find feasible profiles that weakly exceed those, then the folk theorem holds; ie an equilibrium is found for the game. To do this they focus on limit average payoff's where each agent maximizes their own limit average payoff. 
+
+
+Since in the family of zero sum games, an agent may earn a limit average payoff only when it acquires the value of the game on each play, the agent may tend to deviate and this algorithm might not return an equilibrium. In response to this problem, the authors suggest a random zero-sum game, so that both the agents will never know which game will be their last, and this algorithm can then compute an equilibrium.
+
+The algorithm avoids expensive minimax computations and focuses on finding profiles that will atleast weakly exceed the maximum punishment values. Since the algorithm does not consider the outcomes used to compute the punishment values the analysis does not need to deal with co-relation.
+
+The reasoning follows the one for perpetual punishment. "Since a player will not obtain its limit average utility if it deviates therefore it has no incentive to deviate". 
+
+If a player deviates even once, all other players play the strategy that weakly exceeds the punishment value and therefore the deviating player will never be able to receive the limit average payoff.

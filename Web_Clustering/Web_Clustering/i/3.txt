@@ -1,0 +1,6 @@
+The paper assumes an understanding of Dec-POMDPs, and only briefly touches on them. As I am unfamiliar with Dec-POMDPs, it took a couple of reads to gain a basic understanding of the discussion.
+The paper proposes a new model for multi-agent POMDPs, and the complexity of the proposed model is shown. This section is clear, with references clearly spelled out for further reading.
+A factored representation of the model is provided. The comparison of size for factored vs. non-factored is rather interesting.
+The box pushing domain used in the examples are fairly simplistic, but provide enough information that it can be seen how this would be extended to larger domains, even with only small domains given.
+The paper specifies several areas where future work could/should be done. However, this is spread throughout the paper, and a summary of future work should be provided. The areas left for future work did not give the impression that this paper is incomplete
+Overall the paper, while strongly technical, was clear and well written.

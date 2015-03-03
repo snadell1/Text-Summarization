@@ -1,0 +1,5 @@
+The paper does a good job of summarizing current Point-Based Algorithms for POMDPs. It also makes clear why Plan Repair could be useful.
+The heuristics described are clear, and it can be easily seen how they could be useful given the need for tradeoffs.
+The experiment domains chosen for the paper were chosen, as stated, because the proposed algorithm would perform well in those domains. However, for completeness, at least some experiments should have been performed in domains where it is not obvious that the proposed algorithm would perform well.
+The results are presented in a clear manner.  However, it is not clear which heuristic (or multiple if that would be better) should be chosen.
+Overall, the paper was clearly written and adds value to point-based algorithms.

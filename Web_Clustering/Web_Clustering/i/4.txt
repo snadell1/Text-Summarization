@@ -1,0 +1,11 @@
+The authors introduce a learning algorithm for the class of linearly solvable MDPs. In the learning scenario, the transition probabilities are not known up front. The authors address this issue by adopting a belief probability distribution over the transition probability, which is updated with each observation. The techniques used closely follows the basic techniques that guide reinforcement learning techniques in general MDPs, extended to the case of the standard solution technique of LMDPs proposed by Todorov. 
+
+The paper is technically sound and brings together the knowledge of learning in MDPs to the case of linearly solvable MDPs, and is novel enough for acceptance. However the techniques used are fairly basic ideas for both these cases, hence the novelty of the work is limited. The clarity of presentation can be improved further. In fact, the section on related work is larger than the proposed work. It is also not clear why the toy example is explained in detail and never reused as part of more detailed illustrations explaining the algorithm. 
+
+I would like to add a few suggestions to the work:
+
+1. What is the necessity of the switching function to modify equation (12)? The bonus term has in it's denominator the count of a state-action pair, which increases during exploration, so that the bonus term should automatically become negligibly small after sufficient exploration has occurred. The authors mention that the stability of PD and Pre-PD is achieved by the exploration switcher, but it is not clear why it should be so, since the bonus dies down automatically.
+
+2. How do the authors determine when the delay is large enough so that the values may be updated. Would it make more sense to weigh the new updates and decrease this weight as learning continues, rather than using an explicit threshold for updating or not updating?
+
+3. Since solving equation 8 is still costly, I wonder if the authors have considered sampling approaches and prioritizes sweeping techniques used in RL in general MDPs rather than solve for all the states in every iteration.

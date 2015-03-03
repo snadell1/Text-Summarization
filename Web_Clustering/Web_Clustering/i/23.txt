@@ -1,0 +1,13 @@
+The goal of this paper is to improve the well-known method of map-matching which is finding the route of the moving vehicle given the GPS data. Hidden Markov Model (HMM) is commonly used modeling for map-matching because the hidden states of the model can correspond to road segments which are unobservable, and GPS points can be observable variables in HMM. In general, the transition probability of hidden states depends on the travel distance between the states which was mentioned as the previous works. 
+
+The motivation of the paper came from the fact that it is possible that the sampling rate of GPS data points decreases drastically, and we need to consider the turns of the vehicle as the other metric for HMM. In order to determine the transition probability of states in HMM, they used convex combination of metrics (distance/turns) . However, the weight of each metric depends on the availability of GPS data and it is estimated by Inverse Reinforcement Learning (IRL).
+
+The contribution of this paper is to use the types of vehicle’s turn into the estimation of transition probability in HMM, and use IRL to weight different metrics in optimal path estimation. They claimed that with the scarcity of GPS data this method increased the accuracy by %40.
+
+Clarity of presentation is good because it had very good motivation and the main idea was understandable if we read the two main references. However it cannot get the excellent score because the high level algorithm of their work was not given.
+
+Novelty of contribution is good because they combine the two different works together. One is Map-matching by HMM in section 2.1 and IRL to estimate the weights of different metrics (section 2.2). They drastically improved the accuracy of the previous work. However, since their work was incremental and they used the previous works almost identical in their implementation they cannot get excellent point.
+
+Technical soundness was fair, because first of all their method sometime causes inaccuracy in the presence of sufficient GPS data as they mentioned in the experimental results. Therefore their method is not fully robust. On the other hand, the cost of turns which is explained in section 2.1 formula(3) was not well justified. In addition, in order to compute the expected total cost, they used dynamic programming in section 2.2, formulas (5),(6) with not enough explanation. Since these parts are the only theoretical contribution of this paper. It is expected to be explained better.
+
+According to the discussion, paper should not be nominated for the best paper, and since it has good motivation and contribution, it is suitable for a full presentation.

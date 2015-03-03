@@ -1,0 +1,11 @@
+Overall evaluation: Accept. The paper is for finding equilibrium for infinite repeated games in a quicker way. To show a better algorithm, the author first writes about the background. They highlight Folk Theorem as the basic theoretical evidence. Base on the correctness of the theorem which leads to the basic algorithm of finding equilibrium, the author gives their thought that instead of adjusting only one parameter, we can adjust some parameters together, which can boost the speed of original algorithm. Then they prove in theory that the algorithm gives the right equilibrium in a very high probability. And experimentally, the algorithm gives a very fast implement. 
+
+Clarity of presentation: excellent. The author's work is very clear, with few grammar mistakes. The structure of the paper is nice. The audience knows exactly what's going on. 
+
+Technical Soundness: excellent. Except game theory, The paper is also based on probability theory. Involving math in the article makes the conclusion stronger and more reliable. Also the experimental result is good.
+
+Novelty of Contribution: Good. Although the idea of this improvement was used in some other fields before. However, this is the first time in game theory.
+
+Format of Presentation: Short presentation. The contribution part, although strong, is just a small portion of the paper. Hence to better serve the audience, I suggest it only goes with a short presentation.
+
+Nominate for the Best Paper: No. The result is not so influential. Although it gives a better algorithm for finding equilibrium approximately, no sound application is seen here yet.

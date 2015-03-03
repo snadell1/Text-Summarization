@@ -1,0 +1,5 @@
+This paper introduces a new variation of sparse sampling algorithms, namely Monte Carlo Minimax Search or MCMS and compares it to other classical algorithmic searches.
+
+In MCMS, at every chance node, some constant number ‘c’ samples for a certain depth ‘d’ are investigated with replacement as opposed to all the children nodes in case of MCTS. Only the sub trees of the possible outcomes are expanded and the rest are pruned. Only small value of ‘c’ is required and it is independent of the number of states |S|. If the outcome is incalculable/ the policy undecidable, the action chosen during the previous sampling is chosen. The result is (Hence novelty 4)
+
+They have experimented their MCMS algorithm with pruning (Star1SS and Star2SS) and without pruning ( EXPSS ) of the sub trees and found that MCMS performs at least as good if not better (vs. classic counterparts) than the other algorithms for “two-player, perfect information, stochastic, adversarial games” in a given amount of time. 

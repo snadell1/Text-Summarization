@@ -1,0 +1,13 @@
+The paper suggests an algorithm for learning incomplete domain models given a set of complete successful plan traces in the domain. The authors start with an incomplete model with missing preconditions and effects and first refines it by computing more complete action models and macro actions, and then uses it to solve a given problem. The authors argue that including the macro actions in the refined domain model improves plan accuracy. 
+
+The paper is novel and technically sound and addresses the important issue of knowledge refinement in cases of incomplete domain knowledge. The presentation is clear and thorough. I would like to recommend the paper for a short presentation.
+
+I would like to point out a few issues that require clarification, and some possible improvements on the work.
+
+1. Firstly, the authors tackle the improvement of the domain model with respect to complete plan traces only. How will the proposed approach use incomplete traces? This seems like a more general statement, and may be incorporated in the given approach easily.
+
+2. The authors assume a deterministic environment. It would be interesting to see how the approach extends to learning stochastic models. Also what happens if the traces are not always correct? Maybe in such cases, we can model assuming noisy traces or assuming stochasticity in the world? How will the distinction be made?
+
+3. The use of macro operators does improve the accuracy, but does so at the cost of longer plans. Does this mean that this method will produce suboptimal plan in cases where the actions are associated with costs? How does this method extend to including action costs in the model?
+
+4. I wonder if there is any way to tell if the model is complete, with a certain degree of confidence, so that learning may be stopped beyond a point?

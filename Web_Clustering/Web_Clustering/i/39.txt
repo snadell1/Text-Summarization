@@ -1,0 +1,14 @@
+In this paper, Wu et al. have introduced a model free approach using Monte-Carlo Expectation Maximization to solve DEC-POMDPs. They claim that their method is better than most existing methods  as it does not require prior knowledge of the model and can be scaled to extremely large state problems with thousands of agents. The efficient sampling techniques used by the authors of this paper enables them to make their solution scalable.
+
+Justifications:
+I feel this paper should be accepted as it has introduced a new method for solving DEC-POMDPs.
+
+Presentation clarity is fair. It's difficult to follow sections 3.1 and 3.2.
+
+The paper seems technically sound as they have provided mathematical formulas wherever required.
+
+Novelty of contribution is fair as they have made a new algorithm but all the techniques used were already existing.
+
+I think a short presentation will suffice for this paper as they do not have many new concepts to explain.
+
+I do not nominate this paper for the Best paper as this work, although a new model free algorithm, seems to be an implementation of various existing ideas.

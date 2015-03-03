@@ -1,0 +1,15 @@
+I believe that this paper should be accepted. The paper proposes a new active learner algorithm, QUACQ (for Quick Acquisition) which can reduce the required number of queries presented to a user to learn a constraint network. Since the algorithm is optimal in some cases and more efficient than membership query approaches, the approach presented deserves acceptance and further research.
+
+The authors effectively explain how the QUACQ algorithm is different that existing active learner algorithms. The use of partial queries and the method for selecting queries that seeks to find negative responses leads to a more efficient algorithm for converging on the constraints to be learned.
+
+The proofs provided in the paper verify the technical soundness of the approach. The correctness of each part of the algorithm is proven. A valid analysis of the running time of the algorithm is also presented and verifies the statements that the algorithm is optimal in at least one case. The optimality of two cases is also proven so that the running time of the algorithm can be compared to the optimal running time for both cases.
+
+In addition to the proofs, benchmarks are provided comparing QUACQ to other learning algorithms. The benchmarks also confirm the technical soundness of the approach as well as the efficiency claims.
+
+Although the paper presents a novel approach and a technically sound algorithm, the clarity of the paper could be improved. The paper makes only brief mentions of other current approaches with little information about these approaches. Although papers describing the other approaches are referenced, more information about this approaches would be helpful for readers not intimately familiar with them. 
+
+The examples provided for current uses of active learning of constraint networks are not very clear either. Specifically, an example is given of the Normind company transforming there failure detection system, but due to a type-o, the sentence is not clear. ("in to" instead of "into") I had to re-read this sentence multiple times to understand the authors' meaning.
+
+Also, after a brief overview of the approach to be presented, the paper gets very technical, relying on a lot of notation. For readers not already familiar with this notation, the paper approach becomes very difficult to follow. Perhaps more background or better descriptions of the notation would be helpful.
+
+The paper presents a novel approach which is technically sound for learning a constraint network using partial queries. I believe the paper should be accepted. However, do to some clarity issues, I would not nominate it for best paper.

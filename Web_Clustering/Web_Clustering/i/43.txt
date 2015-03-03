@@ -1,0 +1,15 @@
+Traditional and popular methods of computing challenging partially observable markov decision process problems include point-based value iteration algorithms including PERSEUS, PBVI, and SARSOP. The author attempts to improve a problem these algorithms have in that they revolve around choosing the largest alpha vector, and are not concerned about 'how good' the current policy is for  a given belief point. 
+
+  To accomplish this goal, they monitor belief points, and improve/fix points when deemed necessary by the belief monitoring.
+
+Good Points:
+
+   The author provides a substantial background for the reason this problem in POMDP evaluation is important. Each heuristic used is backed up by substantial references and short explaination. Figure 1 shows an easy example as to how POMDP value iteration can become easily problematic, which sets up the main portion of the paper.
+
+   Each metric used to monitor the current belief point is well explained, and the experimental results involve many different value iteration heuristics vs the proposed methods display the usefulness of the proposed method.
+
+   The approach of 'fixing' belief points in an online fashion is novel, and extremely intuitive. The potential for 'catching' bad belief point strategies, although it adds time to the POMDP solution algorithm, has great usage in spaces where unusual observations imply rare, but necessary strategies. 
+
+Bad Points:
+
+   I am not well versed enough in the field to notice any negative points this paper has.

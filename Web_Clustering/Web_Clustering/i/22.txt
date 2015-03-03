@@ -1,0 +1,11 @@
+This paper present a method to infer the most likely route travelled by a vehicle given the erroneous GPS waypoints. The problem is modeled as an HMM, where the observed variables are the GPS waypoints and the hidden variables are the actual road segments. So given a sequence of waypoints, the problem becomes finding the most likely set of road segments (latent variables) from the sequence. The HMM approach to solve this problem is not new. The first contribution in this paper is in terms of defining the transmission probabilities for the HMM. The transmission probability takes into account the number of turns required to travel between two road segments. The turns are penalized (penalty is fixed) based on their magnitude (e.g 45 degree turns have lesser penalty than 90 degree turns). The penalties are added up after weighting, which brings the second contribution of the paper. The weights for the turns are learnt using Inverse Reinforcement Learning.
+
+The weights are obtained by optimizing a function (which is claimed convex in Section 2.2). A gradient descent method is then used to find the optimal value of this function. But it is mentioned in Section 3 that in one particular dataset the value of wturn didn't converge. Why is that? If the function is convex, gradient descent should converge. This point must be detailed. 
+
+Results generally show a better precision and recall rates and lesser error for various sampling rates. Is there a suggestion the authors are willing to give regarding the required sampling rates. Say for e.g, a customer is willing to give an error budget and would the method be able to decide on the best sampling rate needed for this error budget? What assumptions are important if one were to implement one such system?
+
+How does this method perform under various degrees of GPS errors? Say for e.g. can we have a test, where we can compare the performance of this method on the GPS waypoints from an iPhone vs a high end GPS system? How do the weights change in these scenarios?
+
+The transition probability function is modeled as an exponential function. Are there suggestions for alternate functions?
+
+X and Y axes of all graphs are not labelled.

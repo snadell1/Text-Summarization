@@ -1,0 +1,13 @@
+Overall evaluation: Weak accept. The paper proposes a way of nested expectation maximization for model-free RL in a POMDP. The basic idea is as follows: we originally use a model-based way to learn POMDP. However, before we sample enough to construct the model, we cannot learn the best value. When we use a model-free approach, we focus on finding the optimal policy, where we can use an optimization method (EM for example). Therefore, model-free approach could be more efficient than model-based approach, although the result maybe a little worse. A classical  model-free approach is batch-mode approach in quadratic time considering finite state controller (FSC). Another method to solve FSC refers to solving regionalized policy representation (RPR), which uses nested EM algorithm by others' work. Hence the author applies this approach instead of the FSC.
+
+The experimental result is good. Compared to the FSC method, the new method converges fast at first while it then converges slowly. This gives a good balance between efficiency and accuracy. However, the legend of figures on page 7 are misleading for '50200'. Also I don't quite understand the MDP-EM bar, which is only reported at 200*10^3. Why? Also there are some grammar mistakes. Some sentences are sloppy. 
+
+Clarity of presentation: fair. I can understand the paper after spending time. However, there are indeed some grammar mistakes. For example, in section 3.2 , it says, 'the online algorithms also converges to ..'.
+
+Technical Soundness: good. The experimental result are persuasive and thorough. Also the theory is based on some other previous paper. 
+
+Novelty of Contribution: Good. Although the idea of this improvement was raised up in statistics before. However, this is the first time in solving POMDP.
+
+Format of Presentation: Short presentation. The contribution part is applying the existing method to solving POMDP. It is more like an application rather than brand-new innovation. Hence to better serve the audience, I suggest it only goes with a short presentation.
+
+Nominate for the Best Paper: No. Since it is more like an application, it lacks the really sound theory innovation.

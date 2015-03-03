@@ -1,0 +1,8 @@
+This Paper provides a pruning method of the actions that can be chosen at the iteration T for the Iterative MCQ-ALT or IMCQ-ALT algorithm. Thus reducing the time taken to reach the optimal policy.
+
+The argument that the policy converges before the value allows Banerjee to prune the action sub trees to achieve the optimal policy.For pruning the action sub tree for the T th iteration, while maintaining the history, it checks the actions in the (T-1) passes. If the actions are “suboptimal” and an “action meets a confidence preserving criterion“, the action is discarded. Thus allowing to focus on the more likely actions. Banerjee proves that such pruning does not have any effect on the original Q values.
+
+Pruning a part of the policy tree may increase the error exponentially but Banerjee proves that there is no error propagation for the (T-2) iterations and the error is accumulated over for the iterations >= (T-1) only when an action is pruned which might be a part of the optimal policy. Hence, He conditions his pruning so that such an occurrence is highly improbable (1-delta) by setting the error limit to alpha.
+Finally on running the algorithm on benchmark problems for the Dec-POMDPS, the experimental results confirm that his new method of pruning provides a quicker convergence to the (near) optimal policy within (significantly) less time for most problems. ( Thus the score of 5 on acceptance ).
+
+Even though we reduce a lot of time in the calculation of the optimal policy, there is still a chance that we do not get THE OPTIMAL Policy while making the same ( probabilistic ) error as in the case of MCQ-ALT algorithm.

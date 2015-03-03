@@ -1,0 +1,13 @@
+The overall evaluation has been acceptable. The author has clearly explained the EM and MCEM algorithms. Each step of EM has been explained though not clearly at some points.
+
+As a reviewer I feel confident of the analysis being done by the author. The comparisons have been done precisely to show both the shortcomings and the advantages of the methedology.
+
+Clarity of presentation has been fair on most occasions, but have been a little too vague on some, for eg. old joint policy computation hasn't been written anywhere.
+
+Technical soundness: Good since the author has clearly explained the application of mathematical computation wherever required, eg Lagrange's multipliers for finding new parameters, importance sampling for finding the cumulative policy using weights of samples.
+
+Novelty of Contribution: The idea in itself is a revelation(excellent) since complex problem structures can be easily dealt with using samples and without the knowledge of the model.
+
+Format of presentation: The paper in itself is a full representation of the idea. An extension to continual state and action space is however suggested.
+
+The paper because of its unique idea, wide range of application and ease of use of the algorithm makes it worthy of being the best paper.

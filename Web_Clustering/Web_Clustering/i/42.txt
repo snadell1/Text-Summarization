@@ -1,0 +1,32 @@
+In this paper, the authors have proposed a scalable method to solve multi-agent co-operative POMDP's.
+The authors exploit various factors of multi agent POMDP's (Dec-POMDP's) in their translation of a Dec-POMDP to a belief MDP.
+
+The paper is well presented and is suitable to read even to people who are not experts in the field but are aware of basic Math and AI. The Abstract is specific to the problem and the factors addressed do not deviate from the abstract. Notations used are the standard and are therefore easy to comprehend.
+
+The organization of the paper is structured with a detailed background on past approaches, providing basic background and describing the algorithm (step-by-step) before concluding with highly statistical results.
+
+Appropriate references are provided and some important results (for example the HSVI-heuristic search value iteration) which have been exported from references have been described as well.
+
+The paper is well organized and technically correct in terms of notations, theory, and math.
+
+The authors cast a Dec-POMDP as a belief MDP which is also PWLC (piece wise linear convex), they do this under the notion of an offline central planner by aggregating all the seperable policies into a single occupancy state. This occupancy state is deterministic with respect to the central planner.
+
+Doing this they assert that algorithms for MDP's can be used to solve Dec-POMDPS. However this method is not scalable since they simply convert each seperable policy into a single central occupancy state which summarizes the entire state space thereby making the policy growth function remain doubly exponential.
+
+It is at this juncture that they exploit the fact that true histories experienced by the agents often lie in a structured, low-dimensional manifold in the history space. Taking advantage of this fact they extend the Heuristic Search Value Iteration (HSVI ) algorithm to include feature based reductions which they introduce. 
+
+
+They also improve some aspects of HSVI (which may be used even if this paper gets rejected due to majority vote) -efficient point-based backups.
+
+They introduce FOFS (finite order feature selection) to enable compression of the histories using the fact that local histories may be probalistically equivalent. They also take into account the fact that compression will not lead to loss of information for the unvisited occupancy states. Also FOFS is incremental. Forward histories can be generated using the current histories.
+
+They propose a linear reduction method "Hajnal Compression" that preserves the PWLC feature of the occupancy MDP. The Hajnal compression bounds the regret of searching the restricted space (the compressed  occupancy space) over the exact space; the uncompressed history. 
+
+The algorithm to compress increases the number of histories that are examined if the Hajnal property is not satisfied. This can lead to a worst case analysis of T - 1 where T is the horizon.
+
+
+Although there is a discrepancy in the results section wherein some of the problems were not implemented on the same machine, the results considered in isolation themselves appear to be scalable and feasible. 
+
+The algorithm scales well for large horizons which previous algorithms are known not to, and these results provide a significant enhancement in solving Dec-POMDP's.
+
+A further analysis of the results shows that the Number of histories (K) that were examined  were very small -between 1-3 thus confirming the authors claims that true histories experienced often reside in low dimensional history space.

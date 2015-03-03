@@ -1,0 +1,3 @@
+This area, calculating day ahead electricity price, seems very good topic and experimental results show AstonTAC has the potential to be a future solution.This paper provides comprehensive evaluation results so that they support feasibility of its approach and value of AstonTAC.
+
+Although AstonTAC outperformed other TACs, applying real data should be considered as a further work. In real world, there exist wide variety of considerations to make a decision about day ahead price such as power outage, transmission/distribution cost, historical data, regional characteristics, and so on. Moreover, energy wholesale market is gradually changing to real time pricing system. In depth discussions about real time price should be welcome.  
