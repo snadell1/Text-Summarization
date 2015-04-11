@@ -1,9 +1,23 @@
  
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -80,16 +94,24 @@ public class Sentences {
      }
      public void addSentenceRank(String line, int rank_value)
      {
+         
+         
          if((line.startsWith("&gt; ")))
             {
                String s3 = line.replace("&gt; ", "");
                s3 = s3.replace("&gt;", "");
                if(!rank.containsKey(s3))
                {
-                   Sentence_Rank.put(rank_value, s3);
-                   rank.put(s3, rank_value);
+                   //Sentence_Rank.put(rank_value, s3);
+                   //rank.put(s3, rank_value);
+                   
+                   
+                   
+                   
+                   
+                   
                }
-               else
+               /*else
                {
                    if(rank.get(s3)<rank_value)
                    {
@@ -97,7 +119,7 @@ public class Sentences {
                        Sentence_Rank.put(rank_value, s3);
                    rank.put(s3, rank_value);
                    }
-               }
+               }*/
             }
             else
          {
@@ -105,22 +127,98 @@ public class Sentences {
              rank.put(line, rank_value);
          }
      }
-     public ArrayList<String> getRankedSentences(int n)
+     private static HashMap sortByValues(HashMap map) { 
+       List list = new LinkedList(map.entrySet());
+       // Defined Custom Comparator here
+       Collections.sort(list, new Comparator() {
+            public int compare(Object o1, Object o2) {
+               return ((Comparable) ((Map.Entry) (o1)).getValue())
+                  .compareTo(((Map.Entry) (o2)).getValue());
+            }
+       });
+
+       // Here I am copying the sorted list in HashMap
+       // using LinkedHashMap to preserve the insertion order
+       HashMap sortedHashMap = new LinkedHashMap();
+       for (Iterator it = list.iterator(); it.hasNext();) {
+              Map.Entry entry = (Map.Entry) it.next();
+              sortedHashMap.put(entry.getKey(), entry.getValue());
+       } 
+       
+       /*for(Object key: map.keySet())
+       {
+           System.out.println(map.get(key));
+       }
+       System.out.println("--------------------------------------------------");*/
+       return sortedHashMap;
+  }
+     
+     
+     public ArrayList<String> getRankedSentences(String key, int n)
      {
-         Sentence_Rank = Sentence_Rank.descendingMap();
-         System.out.println(Sentence_Rank.size());
+         /*HashMap<String, Integer> SentenceRank = sortByValues(rank);
          ArrayList<String> ranked_Senteces = new ArrayList<String>();
-         int n1=0;
-         
-         for(int key: Sentence_Rank.keySet())
+         int n1= SentenceRank.size();
+         int count = 0;
+         for(String key: SentenceRank.keySet())
          {
-             if(n1<n)
+             if(n1>0 && count<n)
              {
-                 ranked_Senteces.add(Sentence_Rank.get(key));
-                 n1=n1+1;
+                 ranked_Senteces.add(key);
+                 n1=n1-1;
+                 count++;
              }
          }
          return ranked_Senteces;
+                 */
+       
+         ArrayList<String> ranked_Sentences = new ArrayList<String>();
+        Connection con = null;
+        Statement st = null;
+        ResultSet rs = null;
+
+        String url = "jdbc:mysql://localhost:3306/thesisproject";
+        String user = "thesis";
+        String password = "sravan786";
+         
+         
+                   try {
+            con = DriverManager.getConnection(url, user, password);
+            String query = "SELECT sentencestring FROM sentencerank where thread = ? ORDER BY rank DESC LIMIT ? ";
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, key);
+            ps.setInt(2, n);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+               
+                ranked_Sentences.add(rs.getString("sentencestring"));
+            }
+            
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+         
+        
+         
+         return ranked_Sentences;
+         
      }
      public void addSendNodes(HashMap<String, String> temp)
      {

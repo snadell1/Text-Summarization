@@ -18,13 +18,13 @@ public class Wordclass {
      boolean convergence = false;
      // Initialize the list for storing the file names in which the word appeared
      ArrayList<String> thread_numbers = new ArrayList<String>();
-     HashMap<String, Double> term_f = new HashMap<String, Double>();
+     HashMap<String, Integer> term_f = new HashMap<String, Integer>();
      //constructor initializing the occurence and adding the name of the file
      Wordclass(String thread_num)
      {
          NumberOfTimes = NumberOfTimes + 1;
          thread_numbers.add(thread_num);
-         term_f.put(thread_num, 1.0);
+         term_f.put(thread_num, 1);
      }
      //update function which updates the occurence variable each time the word occured 
      public void updateNumber()
@@ -33,6 +33,10 @@ public class Wordclass {
          
      }
      //update function which add/updates the filename 
+     public int getTermFrequency(String thread)
+     {
+         return term_f.get(thread);
+     }
     public void UpdateArray(String num)
     {
         if(thread_numbers.contains(num))
@@ -42,7 +46,7 @@ public class Wordclass {
         else
         {
             thread_numbers.add(num);
-            term_f.put(num,1.0);
+            term_f.put(num,1);
         }
     }
     //retrives the occurences.
@@ -50,7 +54,10 @@ public class Wordclass {
     {
         return NumberOfTimes;
     }
-    
+    public int getThreadssize()
+    {
+        return thread_numbers.size();
+    }
     //retrieves the list of filenames in which the word occured
     public ArrayList<String> getThreadnumbers()
     {
